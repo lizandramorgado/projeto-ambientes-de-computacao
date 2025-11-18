@@ -46,7 +46,7 @@ function render(data) {
     $('related').textContent = data.related_structures || '';
   }
   $('abstract').textContent = data.abstract || '';
-  // Raw JSON element removed from the HTML; don't write raw output here.
+  $('raw').textContent = JSON.stringify(data, null, 2);
 
   // Use known CDN image URL for display (the controller's local_image path is a filesystem path)
   const pdbid = data.pdbid || '';
